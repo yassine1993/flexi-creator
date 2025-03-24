@@ -46,14 +46,15 @@ const InvestmentChart: React.FC<InvestmentChartProps> = ({ data }) => {
   }, [data]);
 
   // Format tick values to be more readable (K for thousands, M for millions)
-  const formatYAxis = (value: number) => {
+  // Ensure it always returns a string to match YAxis tickFormatter type
+  const formatYAxis = (value: number): string => {
     if (value >= 1000000) {
       return `${(value / 1000000).toFixed(1)}M`;
     }
     if (value >= 1000) {
       return `${(value / 1000).toFixed(0)}K`;
     }
-    return value;
+    return value.toString(); // Convert number to string
   };
 
   return (
