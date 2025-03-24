@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 195 73% 28%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -22,7 +23,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 169 59% 79%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +90,54 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+}
+
+/* Custom styles for investment calculator */
+.custom-slider .react-slider-track-0 {
+  @apply bg-calculator-bad/50;
+}
+
+.custom-slider .react-slider-thumb {
+  @apply bg-white border-2 border-calculator-neutral shadow-lg w-6 h-6 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-calculator-neutral focus:ring-offset-2 transition-transform transform active:scale-110;
+}
+
+.blur-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.chart-container path,
+.chart-container line {
+  transition: all 0.3s ease;
+}
+
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.investment-slider {
+  @apply appearance-none w-full h-1.5 rounded-full bg-gray-200;
+}
+
+.investment-slider::-webkit-slider-thumb {
+  @apply appearance-none w-6 h-6 rounded-full bg-white border-2 border-calculator-neutral cursor-pointer;
+}
+
+.investment-slider::-moz-range-thumb {
+  @apply w-6 h-6 rounded-full bg-white border-2 border-calculator-neutral cursor-pointer;
+}
+
+.investment-slider::-webkit-slider-runnable-track {
+  @apply rounded-full;
+  background: linear-gradient(to right, #b8e0d8 0%, #b8e0d8 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%);
+}
+
+.shadow-glass {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
