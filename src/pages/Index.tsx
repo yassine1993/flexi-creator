@@ -4,6 +4,7 @@ import InvestmentSlider from "@/components/InvestmentSlider";
 import InvestmentChart from "@/components/InvestmentChart";
 import RiskProfileSelect from "@/components/RiskProfileSelect";
 import ResultCard from "@/components/ResultCard";
+import Logo from "@/components/Logo";
 import { 
   calculateInvestmentReturns, 
   generateChartData, 
@@ -73,11 +74,12 @@ const Index = () => {
         animate="show"
         variants={containerAnimation}
       >
-        <motion.div variants={itemAnimation} className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-calculator-green mb-4">
+        <motion.div variants={itemAnimation} className="flex flex-col items-center justify-center mb-16">
+          <Logo className="mb-6 h-16 w-auto" />
+          <h1 className="text-4xl md:text-5xl font-bold text-calculator-green mb-4 text-center">
             Calculate the possible returns
           </h1>
-          <h2 className="text-2xl md:text-3xl font-medium text-calculator-green/80">
+          <h2 className="text-2xl md:text-3xl font-medium text-calculator-green/80 text-center">
             from smart investing
           </h2>
         </motion.div>
